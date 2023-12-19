@@ -1,12 +1,9 @@
-import os
-from tika import parser
+from src.Cliente import Cliente
+from src.MovimentoNotasFiscaisSaida import MovimentoNotasFiscaisSaida
 
-filepath = os.path.join(
-    os.path.dirname(__file__),
-    "docs",
-    "23-11-movimento-de-notas-fiscais.pdf",
-)
 
-parsed_document = parser.from_file(filepath)
-parsed_content = parsed_document["content"]
-print(f"File path: ${parsed_content}")
+file_pdf = "docs/23-11-movimento-de-notas-fiscais.pdf"
+
+movimentoNotasFiscaisSaida = MovimentoNotasFiscaisSaida(file_pdf)
+movimentoNotasFiscaisSaida.showInfo()
+cliente = Cliente(file_pdf)
